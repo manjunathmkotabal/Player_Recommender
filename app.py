@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 st.set_page_config(
-    page_title="Player Recommender",
+    page_title="Football Player Recommender",
     page_icon=":soccer:"
 )
 
@@ -32,10 +32,10 @@ def getData():
 outfield_data, gk_data = getData()
 
 
-header = st.beta_container()
-data_info1 = st.beta_container()
-params = st.beta_container()
-result = st.beta_container()
+header = st.container()
+data_info1 = st.container()
+params = st.container()
+result = st.container()
 
 
 with header:
@@ -57,7 +57,7 @@ with params:
     st.text(' \n')
     st.header('Tweak the parameters')
     
-    col1, col2, col3 = st.beta_columns([1, 2.2, 0.8])
+    col1, col2, col3 = st.columns([1, 2.2, 0.8])
     with col1:
         radio = st.radio('Player type', ['Outfield players', 'Goal Keepers'])    
     with col2:
@@ -75,7 +75,7 @@ with params:
             \'All\' by default. Preferred foot data is not available for GK\'s.')
     
 
-    col4, col5, col6, col7 = st.beta_columns([0.7, 1, 1, 1])
+    col4, col5, col6, col7 = st.columns([0.7, 1, 1, 1])
     with col4:
         if radio=='Outfield players':
             res, val, step = (5, 20), 10, 5
